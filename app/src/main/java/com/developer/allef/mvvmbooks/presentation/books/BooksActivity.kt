@@ -18,7 +18,6 @@ class BooksActivity : AppCompatActivity() {
         toolbarBooks.title = getString(R.string.books_toolbar_title)
         setSupportActionBar(toolbarBooks)
 
-
         val viewModel : BooksViewModel = ViewModelProviders.of(this).get(BooksViewModel::class.java)
 
         viewModel.booksLiveData.observe(this, Observer {

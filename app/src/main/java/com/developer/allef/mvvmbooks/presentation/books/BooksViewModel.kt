@@ -17,7 +17,4 @@ class BooksViewModel : ViewModel() {
             Book("Title 2","Autor 2"))
     }
 
-
-
-
 }
