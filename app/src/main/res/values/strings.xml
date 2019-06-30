@@ -1,4 +1,9 @@
 <resources>
     <string name="app_name">MvvmBooks</string>
+
+    <!--Api Key-->
     <string name="api_key">c2U36nGLedfR6OR3CfkMHUYlsE7n6eRU</string>
+
+    <!--Books Activity-->
+    <string name="books_toolbar_title">Books</string>
 </resources>
