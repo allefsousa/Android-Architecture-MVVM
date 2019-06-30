@@ -5,10 +5,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.developer.allef.mvvmbooks.R
-import com.developer.allef.mvvmbooks.data.model.book
+import com.developer.allef.mvvmbooks.data.model.Book
 import kotlinx.android.synthetic.main.item_book.view.*
 
-class BooksAdapter( private val booksList: List<book>) : RecyclerView.Adapter<BooksAdapter.BooksViewHolder>() {
+class BooksAdapter( private val booksList: List<Book>) : RecyclerView.Adapter<BooksAdapter.BooksViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, view: Int): BooksViewHolder {
         val itemView = LayoutInflater.from(parent.context).inflate(R.layout.item_book,parent,false)
         return BooksViewHolder(itemView)
@@ -26,9 +26,9 @@ class BooksAdapter( private val booksList: List<book>) : RecyclerView.Adapter<Bo
         private val title = view.booksTitle
         private val autor = view.booksAuthor
 
-        fun bindView(book: book){
-            title.text = book.title
-            autor.text = book.autor
+        fun bindView(Book: Book){
+            title.text = Book.title
+            autor.text = Book.autor
         }
     }
 }
