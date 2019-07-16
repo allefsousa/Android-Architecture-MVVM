@@ -2,8 +2,13 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools"
               android:orientation="vertical"
               android:layout_width="match_parent"
+              android:clickable="true"
+              android:focusable="true"
+              android:background="?attr/selectableItemBackground"
               android:layout_height="wrap_content"
-                android:padding="16dp">
+              android:paddingLeft="10dp"
+              android:paddingTop="10dp"
+                >
 
     <TextView android:layout_width="wrap_content"
               android:layout_height="wrap_content"
@@ -16,5 +21,14 @@
               android:textColor="@android:color/black"
               tools:text="Autor"
               android:layout_height="wrap_content"/>
+    <View
+            android:layout_width="match_parent"
+            android:background="@color/divider"
+            android:layout_height="1dp"
+            android:layout_marginTop="14dp"
+            android:id="@+id/view_divider"
+            />
+
+
 
 </LinearLayout>

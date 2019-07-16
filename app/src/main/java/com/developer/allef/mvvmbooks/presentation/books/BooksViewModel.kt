@@ -2,13 +2,42 @@ package com.developer.allef.mvvmbooks.presentation.books
 
 import android.arch.lifecycle.MutableLiveData
 import android.arch.lifecycle.ViewModel
+import com.developer.allef.mvvmbooks.data.ApiService
 import com.developer.allef.mvvmbooks.data.model.Book
+import com.developer.allef.mvvmbooks.data.response.BookBodyResponse
+import retrofit2.Call
+import retrofit2.Response
 
 class BooksViewModel : ViewModel() {
      val booksLiveData : MutableLiveData<List<Book>> = MutableLiveData()
 
     fun getBooks(){
-        booksLiveData.value  = createFakeBooks()
+//        booksLiveData.value  = createFakeBooks()
+        ApiService.service.listBook().enqueue(object :retrofit2.Callback<BookBodyResponse>{
+            override fun onFailure(call: Call<BookBodyResponse>, t: Throwable) {
+
+            }
+
+            override fun onResponse(call: Call<BookBodyResponse>, response: Response<BookBodyResponse>) {
+                if (response.isSuccessful){
+                    val books: MutableList<Book> = mutableListOf()
+                    response.body()?.let {
+                        for (results in it.booksResults){
+                            val book = Book(title = results.booksDetails[0].title,
+                                autor = results.booksDetails[0].author
+                                )
+                            books.add(book)
+
+                        }
+
+                    }
+                    booksLiveData.value = books
+                }else{
+
+                }
+            }
+
+        })
     }
 
      fun createFakeBooks () :List<Book> {
