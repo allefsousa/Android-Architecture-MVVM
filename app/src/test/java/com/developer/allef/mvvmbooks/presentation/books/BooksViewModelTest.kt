@@ -22,7 +22,7 @@ class BooksViewModelTest{
     @get:Rule
     val instantTaskExecutorRule = InstantTaskExecutorRule()
 
-    lateinit var mainViewModel: BooksViewModel
+    private lateinit var mainViewModel: BooksViewModel
 
     @Before
     fun setUp() {
@@ -43,7 +43,7 @@ class BooksViewModelTest{
     }
 
 
-    fun createFakeBooks () :List<Book> {
+    private fun createFakeBooks () :List<Book> {
         return  listOf(
             Book("Title 1 ","Autor 1"),
             Book("Title 2","Autor 2"))
