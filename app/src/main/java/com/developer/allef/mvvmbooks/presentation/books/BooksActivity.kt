@@ -7,7 +7,6 @@ import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import com.developer.allef.mvvmbooks.R
-import com.developer.allef.mvvmbooks.data.model.Book
 import kotlinx.android.synthetic.main.activity_books.*
 
 class BooksActivity : AppCompatActivity() {

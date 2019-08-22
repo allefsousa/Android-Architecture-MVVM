@@ -3,17 +3,13 @@ package com.developer.allef.mvvmbooks.presentation.books
 import android.arch.core.executor.testing.InstantTaskExecutorRule
 import android.arch.lifecycle.Observer
 import com.developer.allef.mvvmbooks.data.model.Book
-import io.mockk.every
-import io.mockk.verify
 import org.junit.Assert.*
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.junit.runners.JUnit4
-import org.mockito.ArgumentMatchers
 import org.mockito.Mockito
-import org.mockito.Mockito.any
 import org.mockito.Mockito.mock
 import org.mockito.MockitoAnnotations
 

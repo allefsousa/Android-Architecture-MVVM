@@ -10,12 +10,13 @@ import retrofit2.Response
 
 class BooksViewModel : ViewModel() {
      val booksLiveData : MutableLiveData<List<Book>> = MutableLiveData()
+     val errorMessage : MutableLiveData<String> = MutableLiveData()
+     val failureMessage : MutableLiveData<String> = MutableLiveData()
 
     fun getBooks(){
-//        booksLiveData.value  = createFakeBooks()
         ApiService.service.listBook().enqueue(object :retrofit2.Callback<BookBodyResponse>{
             override fun onFailure(call: Call<BookBodyResponse>, t: Throwable) {
-
+                failureMessage.value = "Falha"
             }
 
             override fun onResponse(call: Call<BookBodyResponse>, response: Response<BookBodyResponse>) {
@@ -27,13 +28,11 @@ class BooksViewModel : ViewModel() {
                                 autor = results.booksDetails[0].author
                                 )
                             books.add(book)
-
                         }
-
                     }
                     booksLiveData.value = books
                 }else{
-
+                    errorMessage.value = "Erro"
                 }
             }
 

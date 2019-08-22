@@ -28,7 +28,7 @@ android {
     }
 }
 
-ext{
+ext {
     retrofit = "2.6.0"
 }
 
